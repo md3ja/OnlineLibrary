@@ -4,27 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Book</title>
-    <link rel="stylesheet" href="styles.css"> <!-- This links the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .edit-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .edit-link:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Add New Book</h1>
-    <form action="add_book.php" method="post">
-        <label for="title">Book Title:</label>
-        <input type="text" id="title" name="title" required><br>
+    <div class="form-container">
+        <h2>Add New Book</h2>
+        <form action="add_book.php" method="post">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title" required>
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required><br>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
 
-        <label for="isbn">ISBN:</label>
-        <input type="text" id="isbn" name="isbn" required><br>
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required>
 
-        <label for="published_date">Published Date:</label>
-        <input type="date" id="published_date" name="published_date" required><br>
+            <label for="published_date">Published Date:</label>
+            <input type="date" id="published_date" name="published_date" required>
 
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
 
-        <input type="submit" value="Add Book">
-    </form>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+
+    <a href="view_books.php" class="edit-link">Edit Existing Book</a>
 </body>
 </html>
